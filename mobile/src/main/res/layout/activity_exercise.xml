@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/background"
+    tools:context=".ExerciseActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseImage"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ex1"
+        android:alpha="0.1" />
+
+    <ProgressBar
+        android:id="@+id/exerciseProgress"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/progress_bar_blue"
+        android:background="@drawable/progress_bar_background"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="10"
+        android:progress="9"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0"
+        android:id="@+id/currentRepeats"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="100sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/total_repeats"
+        android:id="@+id/statusLine"
+        android:layout_below="@+id/exerciseProgress"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="SHOULDER PRESS"
+        android:id="@+id/exerciseName"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/well_done"
+        android:id="@+id/well_done_text"
+        android:layout_below="@+id/statusLine"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/well_done_text">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:id="@+id/skip_exercise_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:theme="@style/TransparentButton"
+            android:layout_gravity="center_horizontal|bottom" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Next"
+            android:id="@+id/next_exercise_button"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:backgroundTint="#57B360"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</RelativeLayout>

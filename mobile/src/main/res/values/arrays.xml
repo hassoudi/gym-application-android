@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="exercise_images">
+        <item>@drawable/ex1</item>
+        <item>@drawable/ex2</item>
+        <item>@drawable/ex3</item>
+    </integer-array>
+
+    <integer-array name="exercise_repeats">
+        <item>6</item>
+        <item>6</item>
+        <item>8</item>
+    </integer-array>
+
+    <string-array name="exercise_description">
+        <item>Keeping your elbows at your sides and your back straight, curl your arms up contracting your biceps.</item>
+        <item>Raise your arms to the side until your palms face the floor. Keep your abs tight.</item>
+        <item>Extend your arms to raise the dumbells until your arms are straight and the dumbells are above your head.</item>
+    </string-array>
+
+    <string-array name="exercise_name">
+        <item>BICEPS CURL</item>
+        <item>LATERAL RAISE</item>
+        <item>SHOULDER PRESS</item>
+    </string-array>
+
+</resources>
