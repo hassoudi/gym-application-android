@@ -14,3 +14,4 @@ their exercises. you can access the dashboard here: http://wearablessdkgym.myblu
 
 
 # Detailed end to end flow
+![slide1](https://cloud.githubusercontent.com/assets/13234255/16177453/76944e48-3636-11e6-992f-ce5b8b7b2f82.png)
