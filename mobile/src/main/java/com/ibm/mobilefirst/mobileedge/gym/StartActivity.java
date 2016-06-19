@@ -26,16 +26,11 @@ public class StartActivity extends AppCompatActivity {
         exerciseName = (TextView) findViewById(R.id.exerciseName);
         exerciseDescription = (TextView) findViewById(R.id.exerciseDescription);
         
-        //set up all the data
+        //set all the data
         final int exerciseNumber = getIntent().getExtras().getInt(NavigationManager.EXERCISE_NUMBER);
         ExerciseData exerciseData = new ExerciseData(getResources(),exerciseNumber);
 
-
         setTitle(exerciseData.name);
-
-//        exerciseImage.setImageResource(getResources().obtainTypedArray(R.array.exercise_images).getResourceId(exerciseNumber,-1));
-//        exerciseName.setText(getResources().getStringArray(R.array.exercise_name)[exerciseNumber]);
-//        exerciseDescription.setText(getResources().getStringArray(R.array.exercise_description)[exerciseNumber]);
 
         exerciseImage.setImageResource(exerciseData.imageResourceId);
         exerciseName.setText(exerciseData.name);

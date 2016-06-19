@@ -27,43 +27,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //set the user name
         TextView userName = (TextView) findViewById(R.id.user_name);
-        TextView workoutDate = (TextView) findViewById(R.id.workout_date);
-
         userName.setText(AuthorizationManager.getInstance().getUserIdentity().getDisplayName());
 
+        //set current date
+        TextView workoutDate = (TextView) findViewById(R.id.workout_date);
         DateFormat df = new SimpleDateFormat("MM/dd/yy");
         String date = df.format(Calendar.getInstance().getTime());
-
         workoutDate.setText(date);
 
-        //setExercisesData(R.id.exercise1,0);
-        //setExercisesData(R.id.exercise2,1);
-        //setExercisesData(R.id.exercise3,2);
-
+        //set all the exercise data
         setExercisesData(R.id.exerceise_name1,R.id.repeats1,0);
         setExercisesData(R.id.exerceise_name2,R.id.repeats2,1);
         setExercisesData(R.id.exerceise_name3,R.id.repeats3,2);
     }
 
-
-    /*
-    private void setExercisesData(int resourceId, int exerciseNumber) {
-
-        ExerciseData data = new ExerciseData(getResources(),exerciseNumber);
-
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(resourceId);
-
-        ((TextView)relativeLayout.findViewById(R.id.repeats)).setText(Integer.toString(data.repeats));
-        ((TextView)relativeLayout.findViewById(R.id.exerceise_name)).setText(data.name);
-    }
-
-    */
-
     private void setExercisesData(int nameResourceId, int repeatsResourceId, int exerciseNumber) {
-
         ExerciseData data = new ExerciseData(getResources(),exerciseNumber);
-
         ((TextView)findViewById(repeatsResourceId)).setText(Integer.toString(data.repeats));
         ((TextView)findViewById(nameResourceId)).setText(data.name);
     }

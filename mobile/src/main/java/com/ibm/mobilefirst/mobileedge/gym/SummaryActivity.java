@@ -15,6 +15,8 @@ import org.json.JSONObject;
 
 public class SummaryActivity extends AppCompatActivity {
 
+    public static final String GymApp = "GymApp";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,35 +24,22 @@ public class SummaryActivity extends AppCompatActivity {
 
         GymApplication gymApplication = (GymApplication) getApplication();
 
-
-
-        /*
-        setExercisesData(R.id.exercise1,0,gymApplication.exerciseCounts[0]);
-        setExercisesData(R.id.exercise2,1,gymApplication.exerciseCounts[1]);
-        setExercisesData(R.id.exercise3,2,gymApplication.exerciseCounts[2]);
-        */
-
+        //set summary data
         setExercisesData(R.id.exerceise_name1,R.id.repeats1,R.id.done1,0,gymApplication.exerciseCounts[0]);
         setExercisesData(R.id.exerceise_name2,R.id.repeats2,R.id.done2,1,gymApplication.exerciseCounts[1]);
         setExercisesData(R.id.exerceise_name3,R.id.repeats3,R.id.done3,2,gymApplication.exerciseCounts[2]);
 
-
         sendUpdateRequest();
     }
 
+    /*
+     * Send the results to the console
+     */
     private void sendUpdateRequest() {
 
         Request request = new Request("/updateData", Request.POST);
         request.setQueryParameter("user",AuthorizationManager.getInstance().getUserIdentity().getDisplayName());
         request.setQueryParameter("id", AuthorizationManager.getInstance().getDeviceIdentity().getId());
-
-        /*
-        JSONArray results = new JSONArray();
-
-        results.put(11);
-        results.put(12);
-        results.put(13);
-        */
 
         GymApplication application = (GymApplication) getApplication();
 
@@ -60,20 +49,16 @@ public class SummaryActivity extends AppCompatActivity {
         request.send(SummaryActivity.this, new ResponseListener() {
             @Override
             public void onSuccess (Response response) {
-                Log.d("Myapp", "onSuccess :: " + response.getResponseText());
-                //Log.d("MyApp", AuthorizationManager.getInstance().getUserIdentity().toString());
-
-                //onLoginSuccess();
-                //System.out.println(AuthorizationManager.getInstance().getUserIdentity().getDisplayName());
+                Log.d(GymApp, "onSuccess :: " + response.getResponseText());
             }
             @Override
             public void onFailure (Response response, Throwable t, JSONObject extendedInfo) {
                 if (null != t) {
-                    Log.d("Myapp", "onFailure :: " + t.getMessage());
+                    Log.d(GymApp, "onFailure :: " + t.getMessage());
                 } else if (null != extendedInfo) {
-                    Log.d("Myapp", "onFailure :: " + extendedInfo.toString());
+                    Log.d(GymApp, "onFailure :: " + extendedInfo.toString());
                 } else {
-                    Log.d("Myapp", "onFailure :: " + response.getResponseText());
+                    Log.d(GymApp, "onFailure :: " + response.getResponseText());
                 }
             }
         });
@@ -81,7 +66,6 @@ public class SummaryActivity extends AppCompatActivity {
 
 
     private void setExercisesData(int nameResourceId, int repeatsResourceId, int doneResourceId, int exerciseNumber, int finalRepeats) {
-
         ExerciseData data = new ExerciseData(getResources(),exerciseNumber);
 
         ((TextView)findViewById(nameResourceId)).setText(data.name);
@@ -91,18 +75,4 @@ public class SummaryActivity extends AppCompatActivity {
             findViewById(doneResourceId).setVisibility(View.INVISIBLE);
         }
     }
-
-
-    /*
-    private void setExercisesData(int resourceId, int exerciseNumber, int repeats) {
-        ExerciseData data = new ExerciseData(getResources(),exerciseNumber);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(resourceId);
-        ((TextView)relativeLayout.findViewById(R.id.exerceise_name)).setText(data.name);
-        ((TextView)relativeLayout.findViewById(R.id.repeats)).setText(Integer.toString(repeats));
-
-        if (repeats == 0){
-            relativeLayout.findViewById(R.id.doneImage).setVisibility(View.INVISIBLE);
-        }
-    }
-    */
 }

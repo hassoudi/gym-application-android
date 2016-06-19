@@ -46,17 +46,6 @@ public class ExerciseActivity extends AppCompatActivity {
 
         counterTextView = (TextView) findViewById(R.id.currentRepeats);
 
-
-        //((RotateDrawable)progressBar.getProgressDrawable());
-
-        //progressBar.setProgressDrawable(getProgressBarDrawable());
-
-        //progressBar.setP
-
-        //progressBar.setProgressDrawable();
-
-        //getResources().getDrawable(R.drawable.progress_bar_blue,null);
-
         View.OnClickListener exerciseFinished = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,9 +61,7 @@ public class ExerciseActivity extends AppCompatActivity {
         counterTextView.setText(Integer.toString(progressBar.getProgress()));
 
         if (progressBar.getProgress() == progressBar.getMax()){
-
             showExerciseEnded();
-            //onExerciseFinished();
         }
     }
 
@@ -109,6 +96,7 @@ public class ExerciseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        //start the sensors to get data
         application.startExerciseGestureDetection(exerciseNumber, new InterpretationListener() {
             @Override
             public void onInterpretationDetected(String s, Object o) {
@@ -120,16 +108,8 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+
+        //stop the sensors
         application.stopExerciseGestureDetection();
     }
-
-    /*
-    private Drawable getProgressBarDrawable(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return getResources().getDrawable(R.drawable.progress_bar_blue, getTheme());
-        } else {
-            return getResources().getDrawable(R.drawable.progress_bar_blue);
-        }
-    }
-    */
 }

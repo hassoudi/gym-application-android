@@ -18,6 +18,9 @@ public class GymApplication extends Application {
     MobileEdgeController controller = new MobileEdgeController();
     Classification classification;
 
+    /**
+     * Start connection to the android wear device using the SDK
+     */
     public void connectToAndroidWear(){
 
         controller.setConnectionListener(new ConnectionStatusListener() {
@@ -49,6 +52,12 @@ public class GymApplication extends Application {
         controller.connect(this, new AndroidWear());
     }
 
+
+    /**
+     * Start classification to detecting specific gesture
+     * @param exerciseNumber
+     * @param listener
+     */
     public void startExerciseGestureDetection(int exerciseNumber, InterpretationListener listener){
 
         classification = new Classification(this);
@@ -59,6 +68,9 @@ public class GymApplication extends Application {
         controller.turnClassificationSensorsOn();
     }
 
+    /**
+     * Stop the detection of all gestures
+     */
     public void stopExerciseGestureDetection(){
         controller.turnClassificationSensorsOff();
         controller.unregisterClassification(classification);
