@@ -85,6 +85,7 @@ public class LogInActivity extends AppCompatActivity {
         //connect to the android wear device
         GymApplication gymApplication = (GymApplication) getApplication();
         gymApplication.connectToAndroidWear();
+
     }
 
     private void onLoginSuccess() {
