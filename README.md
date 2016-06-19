@@ -19,4 +19,6 @@ their exercises. you can access the dashboard here: http://wearablessdkgym.myblu
 
 
 # Install the application
-You can directly download the .apk file from here: 
+You can directly download the .apk file from here: https://github.com/ibm-wearables-sdk-for-mobile/gym-application-android/blob/master/apk/gym_app.apk?raw=true
+
+or clone the repository and run the application directly from Android Studio
