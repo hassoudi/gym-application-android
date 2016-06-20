@@ -18,13 +18,13 @@ A web-based Dashboard is available for the Coach, showing trainees' performance 
 # Installing the application
 You may either:
 
-1. Directly download the .apk file from [here](https://github.com/ibm-wearables-sdk-for-mobile/gym-application-android/blob/master/apk/gym_app.apk?raw=true)
+- Directly download the .apk file from [here](https://github.com/ibm-wearables-sdk-for-mobile/gym-application-android/blob/master/apk/gym_app.apk?raw=true)
 
 or:
 
-2. Get the source code by cloning the repository and running the application directly using Android Studio
+- Get the source code by cloning the repository and running the application directly using Android Studio
 
 
 You can access the coach dashboard [here](http://wearablessdkgym.mybluemix.net/)
 
-We warmly recommend learning more about IBM Wearables SDK and the Gesture Recognition capabilities for [Android](https://github.com/ibm-wearables-sdk-for-mobile/ibm-wearables-android-sdk) and for [iOS](https://github.com/ibm-wearables-sdk-for-mobile/ibm-wearables-swift-sdk).
+**We warmly recommend learning more about IBM Wearables SDK and the Gesture Recognition capabilities for [Android](https://github.com/ibm-wearables-sdk-for-mobile/ibm-wearables-android-sdk) and for [iOS](https://github.com/ibm-wearables-sdk-for-mobile/ibm-wearables-swift-sdk).**
