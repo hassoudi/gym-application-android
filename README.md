@@ -1,16 +1,14 @@
 # gym-application-android
-This ripository contains an end to end sample application of using the IBM Werables SDK with a combination of bluemix services.
-The application displays simple gym application that enable to detect (using Android wear device sensors) 
-variety of gym exercise movemenets and can track the repeast count.
+This demo app shows how to build an app that utilizes Wearable sensors using the IBM Wearables SDK combined with Bluemix services.
+This simple Gym application detects various exercises the trainee performs and counts the number of repetitions. An Android Wear device is used to sense movements and an Android Mobile Phone is used to interpret the data, recognize the movements and display repetiotions count to the trainee. 
+A web-based Dashboard is available for the Coach, showing trainees' performance and allowing to send feedback to the trainee using push notifications.
+You can access the dashboard here: http://wearablessdkgym.mybluemix.net/
 
-Another part of the sample application is a dashboard where you can see all the users results and notify users with comments about
-their exercises. you can access the dashboard here: http://wearablessdkgym.mybluemix.net/
-
-### The use of Bluemix
-1. Node.js server hosting - hosting the dashboard and the endpoints for the use of the application
-2. Mobile Client Access Service - used to perform fast and easy login using the Facebook account
-3. Cloudant Service - used to store all the exercise data per user
-4. Push Service - used to send user based notifications from the dashboard
+### Utilization of Bluemix
+1. Node.js server hosting - hosting the dashboard and the endpoints for the use of the application.
+2. Mobile Client Access Service - used for fast and easy login using a Facebook (or other) account.
+3. Cloudant Service - used for secured data storage on the phone and synchronizing it to the cloud. 
+4. Push Service - used for sending user-specific notifications from the dashboard.
 
 
 ### Detailed end to end flow
